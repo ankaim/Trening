@@ -1,15 +1,16 @@
 
 public class Trening {
     public static void main(String[] args) {
-        Hause hause = new Hause("Hause", 20);
+        Hause hause = new Door("Hause", 20, 20);
         hause.viewHaus();
         Door door = new Door("Дверь в доме", 40, 50);
         door.viewDoor();
         door.viewHaus();
         door.mat();
+        door.vid();
 
     }
-    static class Hause{
+    static abstract class Hause{
         String name;
         int width;
 
@@ -26,6 +27,7 @@ public class Trening {
         void mat(){
             System.out.println("Сделано из кирпича");
         }
+        abstract void vid();
     }
     static class Door extends Hause{
         int height;
@@ -43,6 +45,11 @@ public class Trening {
         void mat() {
             super.mat();
             System.out.println("Сделанно из дерева");
+        }
+
+        @Override
+        void vid() {
+            System.out.println("Вдустворчатые.");
         }
     }
 }
