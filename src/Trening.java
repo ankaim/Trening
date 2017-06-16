@@ -6,6 +6,7 @@ public class Trening {
         Door door = new Door("Дверь в доме", 40, 50);
         door.viewDoor();
         door.viewHaus();
+        door.mat();
 
     }
     static class Hause{
@@ -22,6 +23,9 @@ public class Trening {
         public void viewHaus(){
             System.out.println("Name = "+name+"; Width = "+width);
         }
+        void mat(){
+            System.out.println("Сделано из кирпича");
+        }
     }
     static class Door extends Hause{
         int height;
@@ -33,6 +37,12 @@ public class Trening {
 
         public void viewDoor(){
             System.out.println("Name = "+name+"; Width = "+width+ "; Height = "+height);
+        }
+
+        @Override
+        void mat() {
+            super.mat();
+            System.out.println("Сделанно из дерева");
         }
     }
 }
