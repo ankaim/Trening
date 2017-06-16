@@ -8,6 +8,7 @@ public class Trening {
         door.viewHaus();
         door.mat();
         door.vid();
+        door.nazn();
 
     }
     static abstract class Hause{
@@ -28,6 +29,9 @@ public class Trening {
             System.out.println("Сделано из кирпича");
         }
         abstract void vid();
+        final void nazn(){
+            System.out.println("Жилой дом.");
+        }
     }
     static class Door extends Hause{
         int height;
@@ -51,5 +55,7 @@ public class Trening {
         void vid() {
             System.out.println("Вдустворчатые.");
         }
+
+
     }
 }
